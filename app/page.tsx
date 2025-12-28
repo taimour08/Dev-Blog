@@ -1,63 +1,51 @@
-"use client"
-import { useState } from 'react';
-import { blogs } from './blogs-data';
+// app/page.tsx
+"use client";
 
-export default function Home() {
-  
+import Link from 'next/link';
+import './globals.css';
 
-  const BLOGS_PER_PAGE = 5;
-  const [currentPage, setCurrentPage] = useState(1);
-  
-  // Calculate pagination
-  const totalPages = Math.ceil(blogs.length / BLOGS_PER_PAGE);
-  const startIndex = (currentPage - 1) * BLOGS_PER_PAGE;
-  const currentBlogs = blogs.slice(startIndex, startIndex + BLOGS_PER_PAGE);
-
-  // Truncate text to 200 words
-  const truncateText = (text: string, wordLimit: number) => {
-    const words = text.split(' ');
-    if (words.length > wordLimit) {
-      return words.slice(0, wordLimit).join(' ') + '...';
-    }
-    return text;
-  };
-
+export default function HomePage() {
   return (
-    <div className="page-container">
-      <h1 className="page-title">Blogs</h1>
-      
-      <div className="blogs-container">
-        {currentBlogs.map((blog, index) => (
-          <div key={index} className="blog-card">
-            <h2 className="blog-title">{blog.title}</h2>
-            <div className="blog-meta">
-              <span className="blog-author">By {blog.author}</span>
-              <span className="blog-date">{blog.date}</span>
-            </div>
-            <p className="blog-description">
-              {truncateText(blog.description, 200)}
-            </p>
-          </div>
-        ))}
+    <div className="home-container">
+      <div className="hero-section">
+        <h1 className="hero-title">Welcome to DevBlog</h1>
+        <p className="hero-subtitle">
+          Explore insightful articles about web development, React, Next.js, and modern technologies.
+          Join our community of developers and share your knowledge.
+        </p>
+        
+        <div className="cta-buttons">
+          <Link href="/blogs" className="primary-button">
+            Explore Blogs
+          </Link>
+          <Link href="/createBlog" className="secondary-button">
+            Write Your Own
+          </Link>
+        </div>
       </div>
 
-      {/* Pagination */}
-      <div className="pagination">
-        <button 
-          onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-          disabled={currentPage === 1}
-        >
-          Previous
-        </button>
-        
-        <span>Page {currentPage} of {totalPages}</span>
-        
-        <button 
-          onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-          disabled={currentPage === totalPages}
-        >
-          Next
-        </button>
+      <div className="features-section">
+        <div className="feature-card">
+          <h3>📚 Learn</h3>
+          <p>Detailed tutorials and guides on modern web technologies</p>
+        </div>
+        <div className="feature-card">
+          <h3>💡 Share</h3>
+          <p>Contribute your knowledge and help others grow</p>
+        </div>
+        <div className="feature-card">
+          <h3>🚀 Build</h3>
+          <p>Practical projects you can implement immediately</p>
+        </div>
+      </div>
+
+      <div className="recent-preview">
+        <h2>Recently Published</h2>
+        <div className="preview-card">
+          <h3>Understanding Next.js App Router</h3>
+          <p>A comprehensive guide to the new App Router in Next.js 14...</p>
+          <Link href="/blogs/1">Read More →</Link>
+        </div>
       </div>
     </div>
   );
