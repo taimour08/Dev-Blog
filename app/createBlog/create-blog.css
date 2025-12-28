@@ -1,0 +1,100 @@
+/* app/create-blog/create-blog.css */
+
+/* Main container for the create blog page */
+.create-blog-page {
+  max-width: 800px; /* Limit width for better readability */
+  margin: 0 auto; /* Center the container */
+  padding: 2rem 1rem; /* Add spacing around */
+}
+
+/* Page title styling */
+.page-title {
+  text-align: center; /* Center the title */
+  margin-bottom: 2rem; /* Space below title */
+  color: #1f2937; /* Dark gray color */
+  font-size: 2.5rem; /* Large font size */
+}
+
+/* Success message styling */
+.success-message {
+  background-color: #d1fae5; /* Light green background */
+  color: #065f46; /* Dark green text */
+  padding: 1rem; /* Internal spacing */
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 2rem; /* Space below message */
+  text-align: center; /* Center text */
+}
+
+/* Form styling */
+.blog-form {
+  background-color: white; /* White background */
+  padding: 2rem; /* Internal spacing */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Form group container */
+.form-group {
+  margin-bottom: 1.5rem; /* Space between form fields */
+}
+
+/* Label styling */
+.form-label {
+  display: block; /* Make label take full width */
+  margin-bottom: 0.5rem; /* Space below label */
+  font-weight: 600; /* Bold text */
+  color: #374151; /* Medium gray color */
+}
+
+/* Input field styling */
+.form-input {
+  width: 100%; /* Full width */
+  padding: 0.75rem; /* Internal spacing */
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 1rem; /* Normal font size */
+}
+
+/* Focus state for inputs */
+.form-input:focus {
+  outline: none; /* Remove default outline */
+  border-color: #3b82f6; /* Blue border on focus */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); /* Blue glow */
+}
+
+/* Textarea specific styling */
+.form-textarea {
+  width: 100%; /* Full width */
+  padding: 0.75rem; /* Internal spacing */
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 1rem; /* Normal font size */
+  resize: vertical; /* Allow vertical resizing only */
+  font-family: inherit; /* Use same font as rest of page */
+}
+
+/* Textarea focus state */
+.form-textarea:focus {
+  outline: none; /* Remove default outline */
+  border-color: #3b82f6; /* Blue border on focus */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); /* Blue glow */
+}
+
+/* Submit button styling */
+.submit-button {
+  width: 100%; /* Full width */
+  background-color: #3b82f6; /* Blue background */
+  color: white; /* White text */
+  padding: 1rem; /* Internal spacing */
+  border: none; /* Remove border */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 1.125rem; /* Slightly larger font */
+  font-weight: 600; /* Bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth color transition */
+}
+
+/* Submit button hover effect */
+.submit-button:hover {
+  background-color: #2563eb; /* Darker blue on hover */
+}

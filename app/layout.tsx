@@ -7,11 +7,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <header>
           <nav className="nav-container">
-            <h1 className="logo">The Blogger</h1>
+            <h1 className="logo">Dev Blog</h1>
             <ul className="nav-links">
               <li><a href="/">Home</a></li>
-              <li><a href="/blogs">Create Blog</a></li>
-              <li><a href="/about">Login</a></li>
+              <li><a href="/createBlog">Create Blog</a></li>
+              <li><a href="/login">Login</a></li>
             </ul>
           </nav>
         </header>
