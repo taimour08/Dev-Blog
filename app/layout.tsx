@@ -11,7 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <ul className="nav-links">
               <li><a href="/">Home</a></li>
               <li><a href="/createBlog">Create Blog</a></li>
-              <li><a href="/about">Login</a></li>
+              <li><a href="/login">Login</a></li>
             </ul>
           </nav>
         </header>
