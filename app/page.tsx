@@ -1,65 +1,42 @@
-import Image from "next/image";
-
 export default function Home() {
+  const blogs = [
+    {
+      title: "Understanding Next.js App Router",
+      author: "John Doe",
+      description:
+        "Next.js App Router introduces a modern way to build React applications with better performance and scalability. It is based on React Server Components, which allow developers to render components on the server by default. This reduces the amount of JavaScript sent to the browser and improves page load times. The App Router also provides powerful routing features such as nested layouts, route groups, and dynamic segments. These features make it easier to structure large applications while keeping the codebase clean. For blog applications, the App Router is especially useful because it allows you to fetch data on the server, handle loading and error states gracefully, and improve SEO. Overall, learning the App Router is essential for anyone building modern web apps with Next.js.",
+    },
+    {
+      title: "Why TypeScript Matters in Web Development",
+      author: "Jane Smith",
+      description:
+        "TypeScript is a superset of JavaScript that adds static typing to the language. This helps developers catch errors early during development instead of at runtime. In large applications, TypeScript makes code easier to understand, refactor, and maintain. It also provides excellent editor support such as autocomplete and inline documentation. When used with frameworks like Next.js and tools like Apollo Client, TypeScript ensures type safety across the entire application, from frontend components to API responses. For blog apps, TypeScript helps define clear data models for posts, authors, and comments, reducing bugs and improving developer confidence.",
+    },
+    {
+      title: "Building a Simple Blog with Supabase",
+      author: "Alex Johnson",
+      description:
+        "Supabase is an open-source backend-as-a-service that provides a PostgreSQL database, authentication, and instant APIs. It is a great choice for building blog applications because it removes much of the backend complexity. With Supabase, you can store blog posts, authors, and comments in a database and access them using REST or GraphQL. When combined with Next.js, Supabase enables fast server-side rendering and static generation. This improves SEO and performance for blog sites. Supabase also includes built-in authentication, making it easy to add features like author logins or admin dashboards. Overall, it is a powerful and developer-friendly backend solution.",
+    },
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+
+
+<div style={{ padding: "2rem" }}>
+
+
+
+
+      <h1>Blogs</h1>
+
+      {blogs.map((blog, index) => (
+        <div key={index} style={{ marginBottom: "2rem" }}>
+          <h2>{blog.title}</h2>
+          <p><strong>Author:</strong> {blog.author}</p>
+          <p>{blog.description}</p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      ))}
     </div>
   );
 }
