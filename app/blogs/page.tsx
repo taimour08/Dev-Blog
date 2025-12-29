@@ -8,7 +8,7 @@ import "./bloglist.css";
 type Blog = {
   id: number;
   title: string;
-  auth: string;
+  author: string;
   date: string;
   description: string;
 };
@@ -42,8 +42,8 @@ export default function BlogsPage() {
             <h2 className="blog-title">{blog.title}</h2>
 
             <div className="blog-meta">
-              <span className="blog-author">By {blog.auth}</span>
-              <span className="blog-date">{blog.date}</span>
+              <span className="blog-author">By {blog.author}</span>
+              <span className="blog-date">{blog.date.slice(0, 10)}</span>
             </div>
 
             <p className="blog-description">
